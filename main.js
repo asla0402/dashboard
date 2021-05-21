@@ -67,16 +67,80 @@ function sortSold(){
 }
 
 function updateRank(sortedSoldBeers){
- if (sortedSoldBeers.length >= 1) {
-   let name1 = sortedSoldBeers[0][0];
-   let amount1 = sortedSoldBeers[0][1];
-   console.log(name1, amount1);
+  
+  let maxHeight = document.querySelector(".bar1").clientHeight;
+  console.log(maxHeight);
 
-   //append name1 and amount2 to templates
- }
+  let beerHeight = 0;
+ 
+  if (sortedSoldBeers.length >= 1) {
+    let name1 = sortedSoldBeers[0][0];
+    let amount1 = sortedSoldBeers[0][1];
+    let imageName1 = beerNameToImage(name1); 
+    
+    beerHeight = maxHeight / amount1;
+    console.log(name1, amount1, imageName1);
 
- console.log(sortedSoldBeers);
+    document.querySelector(".amount1").textContent = amount1;
+    document.querySelector(".name1").textContent = name1;
+    document.querySelector("#beerImage1").src = imageName1;
+  } 
+
+  if (sortedSoldBeers.length >= 2) {
+    let name2 = sortedSoldBeers[1][0];
+    let amount2 = sortedSoldBeers[1][1];
+    let barHeight = beerHeight * amount2;
+    let imageName2 = beerNameToImage(name2); 
+
+    console.log(name2, amount2);
+
+    document.querySelector(".amount2").textContent = amount2;
+    document.querySelector(".name2").textContent = name2;
+    document.querySelector(".bar2").style.height = barHeight + "px";
+    document.querySelector("#beerImage2").src = imageName2;
+
+  }
+  if (sortedSoldBeers.length >= 3) {
+    let name3 = sortedSoldBeers[2][0];
+    let amount3 = sortedSoldBeers[2][1];
+    let barHeight = beerHeight * amount3;
+    let imageName3 = beerNameToImage(name3); 
+
+    console.log(name3, amount3);
+
+    document.querySelector(".amount3").textContent = amount3;
+    document.querySelector(".name3").textContent = name3;
+    document.querySelector(".bar3").style.height = barHeight + "px";
+    document.querySelector("#beerImage3").src = imageName3;
+
+
+    //document.querySelector("#app").innerHTML = '';
+    //document.querySelector("#app").appendChild(clone);
+  }
+  console.log(sortedSoldBeers);
 }
+
+//Fælles funktion der kan bruges i alle mine if-statements i updataRank(sortedSoldBeers)
+function beerNameToImage(beerName) {
+  let imageName = beerName.trim().toLowerCase().replace(/\s/g, "");
+  let imagePath = "public/" + imageName + ".png";
+
+  return imagePath
+}
+
+
+
+
+
+//let barSize1 = getHeight();
+//let barSize2 = getHeight();
+
+//document.querySelector("#bar1").style.height = barSize1;
+//document.querySelector("#bar2").style.height = barSize2;
+
+//let imageName = "public/" + (storage.name) + ".png";
+
+
 
 
 //udregn nr. 1, nr. 2 og nr. 3 ud fra sold-objektet 

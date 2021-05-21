@@ -9,6 +9,10 @@ html {
     overflow-x: hidden;
   }
 
+img {
+    max-width: 50px;
+}
+
 body {
     background-image: url("public/background.jpg");
     font-family:  "Roboto", sans-serif;
@@ -49,9 +53,9 @@ body {
 .top .logo h4:before {
     content: "";
     position: absolute;
-    left: 16%;
+    left: 17%;
     top: -2px;
-    width: 65%;  /* or 100px */
+    width: 60%;  /* or 100px */
     border-top: 2px solid rgb(235, 220, 220);
   }
 
@@ -82,6 +86,11 @@ body {
     font-size: 1.3em;
 }
 
+
+
+
+/**** Leading beers *****/
+
 .race {
     height: 55vh;
     display: flex;
@@ -91,44 +100,83 @@ body {
     margin: 0 1em 0 1em;
 }
 
-.beer1, .beer2, .beer3 {
-    display: flex;
-    justify-content: center;
-}
-
-
-
 .bar1 {
     width: 50px;
     height: 80%;
     background-color: #F7E2AE;
-    margin-top: auto;
+    display: flex;
+    justify-content: center;
   }
   
 .bar2 {
     width: 50px;
-    height: 60%;
+    height: 10%;
     background-color: #F7E2AE;
-    margin-top: auto;
+    display: flex;
+    justify-content: center;
   }
 
 .bar3 {
     width: 50px;
-    height: 40%;
+    height: 5%;
     background-color: #F7E2AE;
-    margin-top: auto;
+    display: flex;
+    justify-content: center;
   }
 
-.beer-amount {
+.bars-text {
     display: flex;
     justify-content: space-around;
-    color: white;;
+    color: white;
+    background-color: goldenrod;
 }
+
+.beer1 .beer2, .beer3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-basis: 1;
+    max-width: 40px;
+    background-color: yellow;
+}
+
+.number1, .number2, .number3 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.image-parent {
+    display: flex;
+    justify-content: center;
+    margin-top: auto;
+    background-color: rgb(247, 53, 53);
+}
+
+
 
 .amount1, .amount2, .amount3 {
     display: flex;
     justify-content: center;
+    align-items: flex-end;
 }
+
+.name1, .name2, .name3 {
+    display: flex;
+    justify-content: center;
+    background-color: green;
+}
+
+#beer-image {
+    max-height: 50px;
+    width: 100%;
+}
+
+
+
+
+
 
 
 .cta {
