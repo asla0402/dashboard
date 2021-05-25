@@ -2,12 +2,15 @@
   "name": "dashboard",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --base=./",
     "build": "vite build",
     "serve": "vite preview"
   },
   "devDependencies": {
     "sass": "^1.32.13",
     "vite": "^2.3.0"
+  },
+  "dependencies": {
+    "is-it-weekend": "^1.1.0"
   }
 }

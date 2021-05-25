@@ -1,3 +1,4 @@
+/*
 const { resolve } = require("path");
 
 module.exports = {
@@ -10,4 +11,4 @@ module.exports = {
             },
         },
     },
-};
+}; */

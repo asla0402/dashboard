@@ -2,8 +2,9 @@
 "use strict"
 
 import './style.scss'
+import weekend from 'is-it-weekend'
 
-window.addEventListener("DOMContentLoaded", get);
+window.addEventListener("DOMContentLoaded", get, isItWeekend(weekend));
 setInterval(get, 5000);
 
 const endpoint = "https://foobar-vas.herokuapp.com/";
@@ -19,15 +20,20 @@ function get() {
       },
   }) 
   .then((e) => e.json())
-  .then(addOrder);
+  .then(handleData);
 
 }
 
+function handleData(data){
+  let queue = data.queue;
 
-function addOrder(data) {
+  addOrder(queue);
+  displayQueue(queue);
+}
+
+function addOrder(queue) {
   //init
   //emty object to insert the data 
-  let queue = data.queue;
 
   //everytime we recieve new data
   const newQueue = queue.filter(order => order.id > lastId)
@@ -128,6 +134,24 @@ function beerNameToImage(beerName) {
   return imagePath
 }
 
+function displayQueue(queue) {
+  let queueAmount = "x" + queue.length;
+  document.querySelector(".wait-time").textContent = queueAmount;
+  console.log(queue.length);
+}
+
+
+function isItWeekend(weekend) {
+
+  if(weekend !== true) {
+    document.querySelector(".banner-text").textContent = "Hver 5. øl er gratis på hverdage!";
+  } else {
+    document.querySelector(".banner-text").textContent = "Ingen gratis øl!";
+  }
+  //const bool = weekend([208])
+  // will log `true` if it's Saturday or Sunday
+  console.log(weekend());
+}
 
 
 
