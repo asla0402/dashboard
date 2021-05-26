@@ -1,4 +1,4 @@
-/*
+
 const { resolve } = require("path");
 
 module.exports = {
@@ -7,8 +7,8 @@ module.exports = {
         rollupOptions: {
             input: {
                 main: resolve(__dirname, "index.html"),
-                //order: resolve(__dirname, "order.html"),//
+                //other: resolve(__dirname, "order.html"),//
             },
         },
     },
-}; */
+}; 

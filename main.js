@@ -144,9 +144,9 @@ function displayQueue(queue) {
 function isItWeekend(weekend) {
 
   if(weekend !== true) {
-    document.querySelector(".banner-text").textContent = "Hver 5. øl er gratis på hverdage!";
+    document.querySelector(".banner-text").textContent = "Every fifth beer you buy is on us";
   } else {
-    document.querySelector(".banner-text").textContent = "Ingen gratis øl!";
+    document.querySelector(".banner-text").textContent = "Try our new beer: Github";
   }
   //const bool = weekend([208])
   // will log `true` if it's Saturday or Sunday
